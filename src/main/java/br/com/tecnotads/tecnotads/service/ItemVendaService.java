@@ -28,5 +28,4 @@ public class ItemVendaService {
 	public ItemVenda insert(ItemVenda obj) {
 		return itemVendaRepository.save(obj);
 	}
-
 }

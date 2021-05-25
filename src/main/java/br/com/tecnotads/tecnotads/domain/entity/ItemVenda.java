@@ -9,7 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "ITEM_VENDA")
@@ -20,14 +23,15 @@ public class ItemVenda {
 	private Integer id;
 
 	@JoinColumn(name = "ID_PRODUTO", referencedColumnName = "ID")
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	private Produto produto;
 
 	@Column(name = "QUANTIDADE")
 	private Integer quantidade;
 
-	@JoinColumn(name = "ID_VENDA", referencedColumnName = "ID")
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "ID_VENDA")
 	private Venda venda;
 
 	public ItemVenda() {
@@ -42,6 +46,7 @@ public class ItemVenda {
 		this.venda = venda;
 	}
 
+	@OneToMany()
 	public Integer getId() {
 		return id;
 	}

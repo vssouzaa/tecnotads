@@ -38,5 +38,4 @@ public class ItemVendaController {
 		obj = c.insert(obj);
 		return ResponseEntity.ok().body(obj);
 	}
-
 }

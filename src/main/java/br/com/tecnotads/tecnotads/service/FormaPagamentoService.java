@@ -24,9 +24,5 @@ public class FormaPagamentoService {
 		Optional<FormaPagamento> obj = formaPagamentoRepository.findById(id);
 		return obj.get();
 	}
-	
-	public FormaPagamento insert(FormaPagamento obj) {
-		return formaPagamentoRepository.save(obj);
-	}
 
 }

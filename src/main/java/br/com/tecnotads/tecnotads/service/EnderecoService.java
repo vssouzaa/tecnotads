@@ -25,8 +25,4 @@ public class EnderecoService {
 		return obj.get();
 	}
 	
-	public Endereco insert(Endereco obj) {
-		return enderecoRepository.save(obj);
-	}
-
 }

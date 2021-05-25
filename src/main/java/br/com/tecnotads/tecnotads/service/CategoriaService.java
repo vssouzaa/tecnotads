@@ -25,7 +25,4 @@ public class CategoriaService {
 		return obj.get();
 	}
 	
-	public Categoria insert(Categoria obj) {
-		return categoriaRepository.save(obj);
-	}
 }

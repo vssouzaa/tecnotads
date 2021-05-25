@@ -32,7 +32,7 @@ public class Produto {
 	private float preco;
 
 	@JoinColumn(name = "ID_CATEGORIA", referencedColumnName = "ID")
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	private Categoria categoria;
 	
 	@Column(name = "FOTO")

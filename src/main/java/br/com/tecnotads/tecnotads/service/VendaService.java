@@ -24,7 +24,7 @@ public class VendaService {
 		return obj.get();
 	}
 	
-	public Venda insert(Venda obj) {
-		return vendaRepository.save(obj);
+	public Venda insert(Venda venda) {
+		return vendaRepository.save(venda);
 	}
 }
